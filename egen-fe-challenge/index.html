@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <title>Phone Number Formatter</title>
+  <link data-require="bootstrap-css@*" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://jasmine.github.io/1.3/lib/jasmine.css" />
+</head>
+
+<body ng-controller="PhoneNumberController">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <h1>Phone number formatter</h1>
+    <form name="phoneNumberForm">
+      <div class="form-group">
+        <label for="countryCodeInput">Enter International Country Code:</label>
+        <input type="text" id="countryCodeInput" name="countryCodeInput" ng-model="countryCode" maxlength="2" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="phoneNumberInput">Enter Phone Number:</label>
+        <input type="text" id="phoneNumberInput" name="phoneNumberInput" ng-model="phoneNumber" maxlength="10" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="formattedNumber">Formatted Number:</label>
+        <label class="form-control">{{phoneNumber | phoneNumberFormatter:countryCode }}</label>
+      </div>
+    </form>
+  </div>
+  
+  <script src="http://jasmine.github.io/1.3/lib/jasmine.js"></script>
+  <script src="http://jasmine.github.io/1.3/lib/jasmine-html.js"></script>
+  <script data-require="angular.js@*" data-semver="1.3.5" src="https://code.angularjs.org/1.3.9/angular.js"></script>
+  <script data-require="angular.js@*" data-semver="1.3.5" src="https://code.angularjs.org/1.3.9/angular-mocks.js"></script>
+  <script src="assets/js/jasmine-bootstrap.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
